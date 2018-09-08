@@ -68,7 +68,7 @@ h4{
 #clockdiv > div{
 	padding: 10px;
 	border-radius: 3px;
-	background: #eeea4c;
+	background: #512DA8;
 
 	display: inline-block;
 }
@@ -76,7 +76,7 @@ h4{
 #clockdiv div > span{
 	padding: 15px;
 	border-radius: 3px;
-	background: #f0ed63;
+	background: #673AB7;
 	display: inline-block;
 	background-image: url(bg.png);
 	background-size: cover;
