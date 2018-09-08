@@ -1,0 +1,453 @@
+/* variables.sass */
+//== Colors
+//
+$background: #fff;
+$bodyBackground: #2a2a2a;
+$darkGray: #1e1e1e;
+$lightGray: #f8f8f8;
+$white: #fff;
+$disabledBtnColor: #ccc;
+$magenta: #e61548;
+$orange: #FF6729;
+$skirmishOrange: #f79e4e;
+$pink: #ec1d8d;
+$red: #f61212;
+$darkText: #333;
+$purple: #e16ae0;
+$yellow: #ff0;
+$blue: #2c82c5;
+$darkBlue: #013056;
+$foundersBlue: #1db8f3;
+$proAmBlue: #1a97e1;
+$lightBlue: #3be1ff;
+$error: #d80808;
+$grey: #999;
+$text-color: #ffffff;
+$invert-text-color: #000000;
+$dark-text-color: #797979;
+$bodyBorderColor: #656565;
+
+$bodyLightBorderColor: #b3b3b3;
+$accent-color: #ff0;
+$accent-color-hover: darken($accent-color, 5%);
+$accent-color-darken: darken($accent-color, 5%);
+$footerLinks: #474236;
+$download-background-color: #c272d9;
+
+$siteBlockBg: #f8f8f8;
+$siteBlockBorder: #e8e8e8;
+$siteBlockText: #1e1e1e;
+$siteBlockTextSecondary: #bfbfbf;
+$siteBlockWidth: 800px;
+$siteBlockShadow: 0px 9px 27px 0px #666;
+
+$errorMessageText: #bc0a0d;
+$h2Color: #acab9c;
+$newStore: #526451;
+$saleStore: #782c30;
+$bundleStore: #506da2;
+$featuredStore: #d96e37;
+
+$lightGreen: #dbeed3;
+$lightPink: #ffe4e4;
+
+// Watch Page styles
+$liveStream: #7a3035;
+$recordedStream: #8c9aad;
+$cardWidth: 21.3em;
+$cardHeight: 164px;
+
+//iframe video sizes
+$iframeLgWidth: 960px;
+$iframeLgHeight: 540px;
+$iframeMdWidth: 640px;
+$iframeMdHeight: 360px;
+$iframeSmWidth: 480px;
+$iframeSmHeight: 270px;
+$iframeXsWidth: 100%;
+$iframeXsHeight: 360px;
+
+//== URL's
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+
+$font_0: BurbankBigCondensed-Black, sans-serif;
+$font_1: BurbankSmall-Black, sans-serif;
+$font_4: OpenSans, sans-serif;
+$font_5: sans-serif;
+$font_sc: NotoSansSC, sans-serif;
+$font_tc: NotoSansTC, sans-serif;
+$font_8: OpenSans, icomoon, sans-serif;
+$font_9: BurbankBigCondensed-Black, icomoon, sans-serif;
+$font_ko_art: aERIN, sans-serif;
+$font_ko: NotoSansCJKkr, sans-serif;
+$font_jaHeader: Nis_Jyau_P, sans-serif;
+$font_jaBody: NotoSansCJKjp, sans-serif;
+
+
+$font-size-base: 16px !default;
+$font-size-large: ceil($font-size-base * 1.25) !default;
+$font-size-small: ceil($font-size-base * 0.85) !default;
+// ~18px
+$font-size-small: ceil($font-size-base * 0.85) !default;
+
+// ~12px
+
+$font-size-h1: 29px;
+$font-size-h2: 24px;
+$font-size-h3: 20px;
+$font-size-h4: 16px;
+$font-size-h5: 14px;
+$font-size-h6: 12px;
+
+$font_0_letterspacing: 0.35em;
+
+//
+//
+//== Mixins ==*/
+//
+@mixin phone-landscape {
+  @media only screen and (orientation: landscape) and (min-aspect-ratio: 1/1) {
+    @content; } }
+
+@mixin ellipsis() {
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+
+@mixin vertical-align($position: relative, $top: 50%) {
+    position: $position;
+    top: $top;
+    transform: translateY(-50%); }
+
+@mixin respond-to($media) {
+    @if $media == xs {
+        //select xs devices and up
+        @media only screen and (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+            @content; } }
+
+    @if $media == sm {
+        //select sm devices and up
+        @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            @content; } }
+
+    @if $media == md {
+        //select md devices and up
+        @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            @content; } }
+
+    @if $media == lg {
+        //select lg devices and up
+        @media only screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+            @content; } }
+
+    @if $media == xl {
+        //select lg devices and up
+        @media only screen and (min-width: $screen-xl-min) {
+            @content; } } }
+
+@mixin respond-min-width($media) {
+    @if $media == xs {
+        //select xs devices and up
+        @media only screen and (min-width: $screen-xs-min) {
+            @content; } }
+
+    @if $media == sm {
+        //select sm devices and up
+        @media only screen and (min-width: $screen-sm-min) {
+            @content; } }
+
+    @if $media == md {
+        //select md devices and up
+        @media only screen and (min-width: $screen-md-min) {
+            @content; } }
+
+    @if $media == lg {
+        //select lg devices and up
+        @media only screen and (min-width: $screen-lg-min) {
+            @content; } }
+
+    @if $media == xl {
+        //select lg devices and up
+        @media only screen and (min-width: $screen-xl-min) {
+            @content; } } }
+
+@mixin respond-max-width($media) {
+    @if $media == min {
+        //select xs devices and up
+        @media only screen and (max-width: $screen-xs-min) {
+            @content; } }
+
+    @if $media == xs {
+        //select xs devices and up
+        @media only screen and (max-width: $screen-xs-max) {
+            @content; } }
+
+    @if $media == sm {
+        //select sm devices and up
+        @media only screen and (max-width: $screen-sm-max) {
+            @content; } }
+
+    @if $media == md {
+        //select md devices and up
+        @media only screen and (max-width: $screen-md-max) {
+            @content; } }
+
+    @if $media == lg {
+        //select lg devices and up
+        @media only screen and (max-width: $screen-lg-max) {
+            @content; } }
+
+    @if $media == xl {
+        //select lg devices and up
+        @media only screen and (max-width: $screen-lg-max) {
+            @content; } } }
+
+@mixin respond-handheld-min-width($media, $orientation) {
+    @if $orientation != null and $media == xs {
+        @media only screen and (min-width: $screen-xs-min) and (orientation: $orientation) {
+            @content; } }
+    @if $orientation != null and $media == sm {
+        @media only screen and (min-width: $screen-sm-min) and (orientation: $orientation) {
+            @content; } }
+    @if $orientation != null and $media == md {
+        @media only screen and (min-width: $screen-md-min) and (orientation: $orientation) {
+            @content; } }
+    @if $orientation != null and $media == lg {
+        @media only screen and (min-width: $screen-lg-min) and (orientation: $orientation) {
+            @content; } } }
+
+@mixin respond-handheld-max-width($media, $orientation) {
+    @if $orientation != null and $media == xs {
+        @media only screen and (max-width: $screen-xs-min) and (orientation: $orientation) {
+            @content; } }
+    @if $orientation != null and $media == sm {
+        @media only screen and (max-width: $screen-sm-min) and (orientation: $orientation) {
+            @content; } }
+    @if $orientation != null and $media == md {
+        @media only screen and (max-width: $screen-md-min) and (orientation: $orientation) {
+            @content; } }
+    @if $orientation != null and $media == lg {
+        @media only screen and (max-width: $screen-lg-min) and (orientation: $orientation) {
+            @content; } } }
+
+// @media only screen and (max-width: $screen-xs-min) and (orientation: $orientation)  { @content; }
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content; }
+
+    @-moz-keyframes #{$animation-name} {
+        @content; }
+
+    @-ms-keyframes #{$animation-name} {
+        @content; }
+
+    @keyframes #{$animation-name} {
+        @content; } }
+
+@mixin clearfix {
+    &:before, &:after {
+        content: " ";
+        display: table; }
+    &:after {
+        clear: both; } }
+
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);
+    background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);
+    background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); }
+
+@mixin gradient-horizontal($direction, $startPos, $endPos, $startColor, $endColor) {
+    background: $endColor;
+    background: linear-gradient(to $direction, $startColor $startPos, $endColor $endPos); }
+
+@mixin btn {
+    position: relative;
+    border: 0;
+    border-radius: 0;
+    line-height: 2;
+    z-index: 1;
+    font-family: $font_0;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 0.25em 2em;
+    transform: translateZ(0);
+    letter-spacing: 0;
+    &.btn-xs {
+        height: 3em;
+        line-height: 2.25em;
+        padding: 0.4em 1em; }
+    &.btn-block {
+        display: block; }
+    &.btn-inline {
+        display: inline-block; }
+    &.btn-info {
+        font-family: $font_0;
+        font-size: 1.25em;
+        color: $invert-text-color;
+        background-color: $white;
+        border: none;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+        padding: 0.75em; }
+    &.btn-default {
+        font-size: 1.75em;
+        color: $text-color;
+        background-color: $blue;
+        border: none;
+        padding: 0 2em;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        &:hover {
+            background-color: $lightBlue;
+            text-decoration: none; } }
+    &.btn-display {
+        position: relative;
+        font-size: 1.75em;
+        padding: 0 2em;
+        color: $invert-text-color;
+        margin-top: 0.5em;
+        background: transparent;
+        span {
+            position: relative;
+            z-index: 1; }
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2em;
+            background-color: $accent-color;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 12px -4px rgba($invert-text-color, 0.5);
+            animation: jelly 6s ease-in-out infinite;
+            transform-origin: 50% 50% 20px; }
+        &:hover {
+            &:after {
+                background-color: $accent-color-hover; } }
+        &.no-animate {
+            &:after {
+                animation: none;
+                clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%); } } }
+    &.btn-primary {
+        font-size: 1.75em;
+        color: $invert-text-color;
+        background-color: $accent-color;
+        border: none;
+        padding: 0 2em;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        &:hover {
+            background-color: $accent-color-hover; } }
+
+    &.btn-fixed-width {
+        min-width: 260px; }
+    &.disabled {
+        background-color: $disabledBtnColor;
+        color: darken($text-color, 50%);
+        border-color: $disabledBtnColor;
+        &:hover {
+            color: darken($text-color, 50%) !important; } } }
+
+@mixin diagonal-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 97%); }
+//
+//
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+// Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
+$screen-xs: 568px !default;
+$screen-xs-min: $screen-xs !default;
+$screen-phone: $screen-xs-min !default;
+
+// Small screen / tablet
+// Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+$screen-tablet: $screen-sm-min !default;
+
+// Medium screen / desktop
+// Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+$screen-desktop: $screen-md-min !default;
+
+// Large screen / wide desktop
+// Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
+$screen-lg: 1200px !default;
+$screen-lg-min: $screen-lg !default;
+$screen-lg-desktop: $screen-lg-min !default;
+
+$screen-xl: 1400px !default;
+$screen-xl-min: $screen-xl !default;
+$screen-xl-desktop: $screen-xl-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: $screen-sm-min - 1 !default;
+$screen-sm-max: $screen-md-min - 1 !default;
+$screen-md-max: $screen-lg-min - 1 !default;
+$screen-lg-max: $screen-xl-min - 1 !default;
+
+@mixin transition($prop, $ease, $time) {
+    -webkit-transition: $prop $ease $time;
+    -moz-transition: $prop $ease $time;
+    -ms-transition: $prop $ease $time;
+    -o-transition: $prop $ease $time;
+    transition: $prop $ease $time; }
+
+@keyframes jiggle {
+    0%, 14% {
+        transform: scale(1.0, 1.0); }
+    2% {
+        transform: scale(1, 0.9); }
+    8% {
+        transform: scale(0.9, 1.1) translate(0, -5px); }
+    11% {
+        transform: scale(1.0, 1.0) translate(0, -3px); } }
+
+@keyframes jelly {
+    0% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    50% {
+        transform: matrix3d(1.0593000000000001,0,-0.10,0.00025,0.00,0.9602999999999999,0.10,-0.0001,0.1,-0.1,0.9801,0,0,-3,0,1); }
+    100% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0.1em); }
+    50% {
+        transform: translateY(0.4em); }
+    100% {
+        transform: translateY(0.1em); } }
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(-50%); }
+    30% {
+        opacity: 1;
+        transform: scale(0.9)  translateY(-50%); }
+    50% {
+        transform: scale(1.03)  translateY(-50%); }
+    100% {
+        transform: scale(1)  translateY(-50%); } }
+
+@keyframes float {
+    from {
+        transform: translate(0,  0px); }
+    65% {
+        transform: translate(0, 2em); }
+    to {
+        transform: translate(0, -0px); } }

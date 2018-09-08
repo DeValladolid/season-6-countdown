@@ -1,0 +1,84 @@
+@import 'variables-mixins.sass';
+
+.standing-item {
+    color: $text-color;
+    padding: 0;
+    max-width: 1600px;
+    margin: 0 auto;
+    h1 {
+        font-size: 5em;
+        margin-bottom: 0.5em;
+        @include respond-max-width(sm) {
+            font-size: 3em; } }
+    .standings {
+        ul {
+            list-style-type: none;
+            margin: 0;
+            li {
+                margin-bottom: 1em;
+                background-color: #254b94;
+                position: relative;
+                padding: 1em 4em 1em 2em;
+                text-align: right;
+                clip-path: polygon(0% 10%, 12% 11%, 8% 0%, 90% 0%, 90% 10%, 91% 0%, 99% 0%, 100% 100%, 40% 100%, 39% 92%, 39% 100%, 1% 100%);
+                &.orange {
+                    background: #fe8455;
+                    background: -moz-linear-gradient(-45deg, #fdbf46 0%, #fe8455 100%);
+                    background: -webkit-linear-gradient(-45deg, #fdbf46 0%, #fe8455 100%);
+                    background: linear-gradient(135deg, #fdbf46 0%, #fe8455 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdbf46', endColorstr='#fe8455',GradientType=1 ); }
+                h3 {
+                    display: inline-block;
+                    margin: 0;
+                    font-family: $font_1; }
+                .place {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 10em;
+                    height: 100%;
+                    background-color: $background;
+                    color: $invert-text-color;
+                    text-align: center;
+                    padding-top: 1.2em;
+                    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+                    h3 {
+                        font-family: $font_0;
+                        font-size: 1.5em; } }
+                @include respond-max-width(md) {
+                    .place {
+                        width: 4.5em; } }
+                @include respond-max-width(sm) {
+                    padding: 1em 1em 1em 4em;
+                    .place {
+                        width: 4em;
+                        h3 {
+                            font-size: 1.2em;
+                            padding-top: 0; } }
+                    h3 {
+                        font-size: 1.2em; } } } } }
+    .btnWrapper {
+        margin-top: 1.5em;
+        .skirmishBtn {
+            display: inline-block;
+            background-color: #254b94;
+            transition: background-color 0.3s ease-in-out;
+            clip-path: polygon(0% 10%, 25% 5%, 25% 15%, 28% 5%, 100% 0%, 100% 100%, 20% 98%, 18% 88%, 18% 99%, 1% 100%);
+            span {
+                display: inline-block;
+                font-family: $font_0;
+                font-size: 2em;
+                color: $text-color;
+                text-transform: uppercase;
+                padding: 0 1em; }
+            i {
+                display: inline-block;
+                background-color: $background;
+                color: $invert-text-color;
+                font-size: 2.5em;
+                padding: 0.5em;
+                transition: background-color 0.3s ease-in-out; }
+            &:hover {
+                background-color: darken(#254b94, 10%);
+                i {
+                    background-color: $yellow; } } } } }

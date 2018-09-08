@@ -1,0 +1,601 @@
+/* app.sass */
+@import 'scaffolding.sass';
+@import 'fonts.sass';
+@import 'icons.sass';
+@import 'variables-mixins.sass';
+
+@-ms-viewport {
+    width: auto !important; }
+body * {
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1; }
+
+html, html > body, body > #fortniteReactWrapper {
+    background-color: $bodyBackground !important;
+    * :focus {
+        outline: 0; } }
+
+body.ko * {
+    word-break: keep-all; }
+
+a {
+    &:hover,
+    &:focus,
+    &:active {
+        outline: 0;
+        text-decoration: none; } }
+
+.fortnite-stream-overlay {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed; }
+
+.fortnite-wrapper #egf {
+    z-index: 0; }
+
+#fortniteReactWrapper {
+    height: 100%;
+    > div {
+        height: 100%; }
+    .battle-pass-view {
+        background-color: $background; } }
+
+.fortnite-wrapper {
+    overflow-x: hidden;
+    .product-font {
+        font-family: $font_4; }
+
+    .light-bg {
+        background: top url(../images/siteBg/FNlightTexture-min.jpg) no-repeat;
+        background-size: 100%; }
+
+    h1.site-block-page-title {
+        margin-top: 0;
+        padding: 2em 0;
+        text-transform: uppercase;
+        color: $white;
+        text-align: center;
+        @include respond-max-width(xs) {
+            padding: 1em 0;
+            font-size: 2em; } }
+
+    .site-block {
+        padding: 2em;
+        color: $siteBlockText;
+        background-color: $siteBlockBg;
+        border: 1px solid $siteBlockBorder;
+        max-width: $siteBlockWidth;
+        margin: 1em auto;
+        text-align: left;
+        @include respond-max-width(xs) {
+            margin: 0.5em; }
+
+        .errorMessage {
+            color: $errorMessageText; }
+
+        .site-block-header {
+            padding-bottom: 1em;
+            border-bottom: 1px solid $siteBlockBorder;
+            margin-bottom: 2em;
+
+            .site-block-title {
+                margin-bottom: 0.5em;
+                margin-top: 0.4em;
+                font-size: 2em;
+                font-weight: 400;
+                text-transform: uppercase; }
+
+            .epic-logo-invert {
+                background: url(../images/logo-epic_invert.png) center center no-repeat;
+                background-size: contain;
+                width: 2em;
+                height: 2em; }
+
+            .epic-logo {
+                background: url(../images/logo-epic.png) center center no-repeat;
+                background-size: contain;
+                width: 2em;
+                height: 2em; } }
+
+        .site-block-footer {
+            h2 {
+                font-size: 1em;
+                font-weight: 200; } } }
+    .btn-wide {
+        width: 100%; }
+
+    .dropDown-container {
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        .btn {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0 !important;
+            i {
+                display: inline-block;
+                transform: rotate(90deg);
+                transform-origin: center center;
+                margin-left: 0.7em;
+                font-size: 0.7em;
+                transition: transform 0.3s ease-in-out; } }
+        .container-contents {
+            position: absolute;
+            z-index: 100;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: inherit;
+            margin: 0 auto;
+            border: 1px solid $siteBlockBorder;
+            background-color: $siteBlockBg;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease-in-out;
+
+            @include respond-max-width(xs) {
+                width: 100%;
+                max-width: 100%; }
+
+            a {
+                font-family: $font_4;
+                font-size: 0.8em;
+                font-weight: 700;
+                color: $invert-text-color;
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 0.75em 0;
+                transition: color 0.3s ease-in-out;
+                span {
+                    white-space: normal; }
+                &:hover {
+                    color: $invert-text-color; } } }
+
+        &.active {
+            .btn {
+                i {
+                    transform: rotate(-90deg) !important; } }
+            .container-contents {
+                opacity: 1;
+                visibility: visible;
+                top: 100%; } } }
+    .loading {
+        position: relative;
+        margin: 50px auto;
+        text-align: center;
+        min-height: 80px;
+        background: url(../images/loading/FN-spin.gif) center center no-repeat #fff;
+        background-size: contain;
+        background-color: transparent;
+        height: 100%;
+        width: 100%; }
+
+    &.msie .btn:after {
+        animation: none !important; } }
+
+.launcherClient {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 18px; }
+    ::-webkit-scrollbar-track {
+        background: #bbb;
+        border-radius: 50px; }
+    ::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 50px; }
+    ::-webkit-scrollbar-thumb:horizontal:hover,
+    ::-webkit-scrollbar-thumb:vertical:hover {
+        background: #666; }
+    ::-webkit-scrollbar-track:hover {
+        background: #bbb; }
+    ::-webkit-scrollbar-button {
+        width: 8px;
+        height: 13px;
+        display: block; }
+    ::-webkit-scrollbar-corner {
+        background-color: $background; }
+    .page-transition-appear,
+    .page-transition-enter,
+    .page-transition-appear.page-transition-appear-active,
+    .page-transition-enter.page-transition-enter-active {
+        opacity: 1;
+        transform: none;
+        transition: none; }
+
+    #fortniteReactWrapper {
+        background: $background;
+        height: 100vh !important;
+        padding: 0 5px 0 0;
+        margin: 0 12px 0 0;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        position: absolute;
+        width: calc(100% - 12px);
+        z-index: 1;
+        .epic-games-nav-spacer {
+            height: 0; }
+        #egh.fortnite nav {
+            right: 24px; }
+        .fortnite-wrapper {
+            #footer {
+                padding-bottom: 40px;
+                #footerSocial {
+                    display: none; } } } } }
+
+.disable-hover a,
+.disable-hover strong,
+.disable-hover img,
+.disable-hover .external-link,
+.disable-hover .media,
+.disable-hover article {
+    pointer-events: none !important; }
+
+.grab-hand {
+    cursor: -webkit-grabbing !important;
+    a {
+        cursor: -webkit-grabbing !important; } }
+
+.ReactModal__Overlay {
+    background-color: rgba(0,0,0,.2) !important; }
+
+.gradient {
+    background: rgb(42,44,49);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJhMmMzMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwODA3MDgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(42,44,49,1) 0%, rgba(8,7,8,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(42,44,49,1)), color-stop(100%,rgba(8,7,8,1)));
+    background: -webkit-linear-gradient(top,  rgba(42,44,49,1) 0%,rgba(8,7,8,1) 100%);
+    background: -o-linear-gradient(top,  rgba(42,44,49,1) 0%,rgba(8,7,8,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(42,44,49,1) 0%,rgba(8,7,8,1) 100%);
+    background: linear-gradient(to bottom,  rgba(42,44,49,1) 0%,rgba(8,7,8,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a2c31', endColorstr='#080708',GradientType=0 ); }
+
+.fortnite-wrapper {
+    position: relative;
+    > div {
+        position: relative; }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $font_0;
+        text-transform: uppercase; }
+    h1 {
+        font-size: 2.75em;
+        @include respond-max-width(md) {
+            font-size: 2em; } }
+    h2 {
+        font-size: 1.875em;
+        @include respond-max-width(md) {
+            font-size: 1.25em; } }
+    h3 {
+        font-size: 1.375em; }
+    h4 {
+        font-size: 1.125em; }
+    h5 {
+        font-size: 1em; }
+    h6 {
+        font-size: 0.875em; }
+    hr {
+        border-top: 1px solid $bodyLightBorderColor; }
+    .jumbotron {
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+        h1 {
+            font-size: 5em;
+            @include respond-max-width(md) {
+                font-size: 3em; } }
+        h2 {
+            font-size: 4em;
+            @include respond-max-width(md) {
+                font-size: 2.5em; } }
+        h3 {
+            font-size: 2.75em;
+            @include respond-max-width(md) {
+                font-size: 2em; } }
+        h4 {
+            font-size: 1.75em; }
+        h5 {
+            font-size: 1.125em;
+            @include respond-max-width(md) {
+                font-size: 1em; } }
+        h6 {
+            font-size: 1em; } }
+
+    p,ol,ul,a {
+        font-family: $font_4;
+        font-weight: 400;
+        font-size: 0.9em;
+        line-height: 1.75; }
+    a {
+        color: $foundersBlue;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+        &:hover {
+            color: darken($foundersBlue, 5%); } }
+    .play-button {
+        position: relative;
+        width: 6.25em;
+        height: 3.609em;
+        background-color: transparent;
+        margin: 0 auto 3em;
+        border-left: solid 0.412em $text-color;
+        border-right: solid 0.412em $text-color;
+        cursor: pointer;
+        transition: border 0.3s ease-in-out;
+        &:hover {
+            border-color: $accent-color;
+            i {
+                color: $accent-color; }
+            &:before,
+            &:after {
+                border-color: $accent-color; } }
+        &.sm {
+            display: inline-block;
+            width: 1.875em;
+            height: 1.083em;
+            margin: 0.541em 0;
+            border-left: solid 0.188em $text-color;
+            border-right: solid 0.188em $text-color;
+            @include respond-max-width(xs) {
+                width: 1.775em; }
+            &:hover {
+                i {
+                    color: $text-color; } }
+            &:before,
+            &:after {
+                width: 1.326em;
+                height: 1.326em;
+                transform: scaleY(0.5774) rotate(-45deg);
+                left: 0.087em; }
+            &:before {
+                top: -0.663em;
+                border-top: solid 0.265em $text-color;
+                border-right: solid 0.265em $text-color; }
+            &:after {
+                bottom: -0.663em;
+                border-bottom: solid 0.265em $text-color;
+                border-left: solid 0.265em $text-color; }
+            i {
+                font-size: 0.9em;
+                padding-top: 0.125em;
+                @include respond-max-width(xs) {
+                    padding-top: 0.25em; } } }
+        &.md {
+            width: 80px;
+            height: 46.19px;
+            &:before,
+            &:after {
+                width: 56.57px;
+                height: 56.57px;
+                left: 6.7px; }
+            &:before {
+                top: -28.2843px; }
+            &:after {
+                bottom: -28.2843px; }
+            i {
+                padding-top: 0.55em;
+                padding-left: 0.1em; } }
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            width: 4.419em;
+            height: 4.419em;
+            transform: scaleY(0.5774) rotate(-45deg);
+            background-color: inherit;
+            left: 0.603em;
+            transition: border 0.3s ease-in-out; }
+        &:before {
+            top: -2.225em;
+            border-top: solid 0.442em $text-color;
+            border-right: solid 0.442em $text-color; }
+        &:after {
+            bottom: -2.225em;
+            border-bottom: solid 0.442em $text-color;
+            border-left: solid 0.442em $text-color; }
+        i {
+            font-size: 1.5em;
+            display: block;
+            padding-top: 0.75em;
+            text-align: center;
+            color: $text-color;
+            transition: color 0.3s ease-in-out; } }
+    .btn {
+        @include btn;
+        > span {
+            pointer-events: none; } }
+    .btn-hex + .btn-hex {
+        margin-top: 5px; }
+
+    //onload
+    .fade-appear {
+        opacity: 0.01; }
+
+    .fade-appear.fade-appear-active {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out; }
+
+    //transition
+    .transition-enter {
+        opacity: 0.01; }
+
+    .transition-enter.transition-enter-active {
+        opacity: 1;
+        transition: opacity 300ms ease-in; }
+
+    .transition-leave {
+        opacity: 1; }
+
+    .transition-leave.transition-leave-active {
+        opacity: 0.01;
+        transition: opacity 150ms ease-in; }
+
+    .no-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important; }
+
+    .iosButton {
+        width: 15em;
+        height: 4em;
+        background: url(../images/fnMobile/iosBadge.svg) no-repeat center;
+        background-size: contain;
+        margin: 0 auto; } }
+
+
+/* default page Transition */
+.page-transition-appear {
+    opacity: 0.01; }
+
+.page-transition-appear.page-transition-appear-active {
+    opacity: 1;
+    transition: opacity 0.4s ease-out; }
+
+.page-transition-enter {
+    overflow: hidden;
+    opacity: 0.75;
+    transform: scale(1.025);
+    transform-origin: top center; }
+.page-transition-enter.page-transition-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 400ms ease, opacity 200ms linear; }
+
+#epicEuCookie.eu-cookie-msg {
+    border: 1px solid $siteBlockBorder;
+    background: $siteBlockBg;
+    color: $darkGray;
+    bottom: 45px;
+    right: 45px;
+    a {
+        color: $accent-color; }
+    .eu-cookie-close {
+        text-transform: uppercase;
+        background-color: $accent-color;
+        &:hover {
+            background-color: $accent-color-hover; } } }
+
+.zh {
+    .fortnite-wrapper {
+        font-family: $font_sc;
+        p, ol, ul, a {
+            font-family: $font_sc;
+            font-weight: 400; }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            font-family: $font_sc; } } }
+.zh_HK {
+    .fortnite-wrapper {
+        font-family: $font_tc;
+        p, ol, ul, a {
+            font-family: $font_tc; }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 800;
+            font-family: $font_tc; } } }
+.ja {
+    .fortnite-wrapper:not(.switch) {
+        font-family: $font_jaBody;
+        p, ol, ul, a {
+            font-family: $font_jaBody; } }
+    .fortnite-wrapper {
+        h1, h2, h3, h4, h5, h6 {
+            font-family: $font_jaHeader; }
+        h1 {
+            font-size: 2.2em;
+            @include respond-max-width(md) {
+                font-size: 2em; } }
+        h2 {
+            font-size: 2em;
+            @include respond-max-width(md) {
+                font-size: 1.5em; } }
+        h3 {
+            font-size: 2.75em;
+            @include respond-max-width(md) {
+                font-size: 2em; } }
+        h4 {
+            font-size: 1.75em; }
+        h5 {
+            font-size: 1.125em;
+            @include respond-max-width(md) {
+                font-size: 1em; } }
+        h6 {
+            font-size: 1em; }
+        .content-box .btn,
+        .error-message .btn,
+        .btn.btn-display,
+        .download-button.play-free,
+        .pack-buy-button.can-buy .btn,
+        .detail-view .detail-pricing-title .price, .detail-view .detail-pricing-title .discount {
+            font-family: $font_jaHeader; } } }
+
+.ko {
+    #Stage {
+        font-family: $font_ko_art;
+        .FortsViewTitle .wrapper {
+            font-family: $font_ko_art !important; }
+        .TitleLine2 {
+            font-size: 104px !important;
+            line-height: 1.4em !important; } }
+    .fortnite-wrapper:not(.switch) {
+        font-family: $font_ko;
+        p, ol, ul, a, h5, h6,
+        .battle-pass-text .details-container .detail-items .content p,
+        .battle-pass-jumbotron .jumbo-content p,
+        .detail-header-container .detail-header-pricing .detail-pricing-title h3 {
+            font-family: $font_ko; }
+        .article-view {
+            font-family: $font_ko; }
+        .blog-view-container .blog-view {
+            font-family: $font_ko; }
+        .blog-container .blog-article .blog-content {
+            article strong {
+                font-family: $font_ko; }
+            .blog-header-info {
+                .blog-header-date, .blog-header-author {
+                    font-family: $font_ko; } } }
+        .detail-view .stickyNav .pack-nav-container h5, {
+            font-family: $font_ko;
+            white-space: nowrap; } }
+    .fortnite-wrapper {
+        .buyNow .fullPage-content p {
+            font-family: $font_ko_art; }
+        .article-view {
+            .cmsContainer h1 {
+                font-family: $font_ko_art !important; } }
+        h1, h2, h3, h4,
+        .btn.btn-display,
+        .download-button.play-free,
+        .pack-buy-button.can-buy .btn,
+        .detail-view .detail-pricing-title .price, .detail-view .detail-pricing-title .discount {
+            font-family: $font_ko_art; }
+        .egf .tags .tag-title, .egf .legal .links li a {
+            font-family: $font_4; }
+        .battle-pass-text .heroImage .text h6 {
+            font-family: $font_0; }
+        .pack .pack-summary .price {
+            font-family: $font_ko_art; }
+        .blog-view-container .blog-view {
+            .headline-banner h2, .headline h2 {
+                font-family: $font_ko_art; } }
+        .blog-wrapper .blog-view-container .headline-banner.headline-btn .btn-news,
+        .ReactModalPortal .blog-view-container .headline-banner.headline-btn .btn-news {
+            font-family: $font_ko_art; }
+        .category-filter .head .filter-button {
+            white-space: nowrap; }
+        .article-view .cmsContainer h1 {
+            font-family: $font_ko_art !important; } } }
+
+.blog-container {
+    .blog-article {
+        .blog-content {
+            .cms img {
+                margin: 0; } } } }

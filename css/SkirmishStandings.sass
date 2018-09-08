@@ -1,0 +1,41 @@
+@import '../../../../styles/variables-mixins.sass';
+
+.skirmish-standings {
+    position: relative;
+    z-index: 1;
+    padding: 6em 10px 4em;
+    .slick-slider {
+        text-align: center;
+        .slick-next {
+            right: 1em;
+            @media screen and (max-width: 1700px) {
+                right: 0;
+                top: 4em;
+                height: 37px; }
+            @include respond-max-width(sm) {
+                top: 1em; } }
+        .slick-prev {
+            left: 1em;
+            @media screen and (max-width: 1700px) {
+                left: 0;
+                top: 4em;
+                height: 37px; }
+            @include respond-max-width(sm) {
+                top: 1em; } }
+        .slick-arrow i {
+            color: $text-color;
+            font-size: 3em;
+            transition: color 0.3s ease-in-out;
+            &:hover {
+                color: #254b94; }
+            @include respond-max-width(sm) {
+                color: #254b94; } }
+        .slick-dots {
+            display: inline-block !important;
+            right: auto;
+            .slick-active {
+                background-color: $text-color !important;
+                border-color: $text-color !important; }
+            @include respond-max-width(xs) {
+                right: 0;
+                bottom: -1em; } } } }
