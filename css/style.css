@@ -1,7 +1,11 @@
-@font-face {
-    font-family: fortnite;
-    src: url(fortnite.woff);
- }
+ @font-face {
+     font-family: burbank-small;
+     src: url(fonts/Burbank-small.woff);
+  }
+  @font-face {
+      font-family: fortnite;
+      src: url(fonts/Burbank-Normal.woff);
+   }
 
 .a-test,.logo-btn,.logo-btn2{
     -webkit-animation:fadeInLeft 1s .2s ease both;  animation:fadeInLeft 1s .2s ease both;}
@@ -52,6 +56,7 @@ h1{
 }
 
 h4{
+  font-family: burbank-small;
   color: #fff;
   font-size: 1.5em;
 	text-shadow: 2px 2px 5px black;
