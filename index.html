@@ -42,7 +42,15 @@ function myFunction() {
 }
 </script>
 
-
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "81716ecb-bc9c-4b47-a0da-d9d5a0743acd",
+    });
+  });
+</script>
 
 </head>
 
