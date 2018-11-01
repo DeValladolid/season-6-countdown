@@ -213,3 +213,24 @@ a.button {
   line-height: 1;
   cursor: pointer;
 }
+
+#stream{
+	font-family: fortnite;
+	color: #fff;
+	display: block;
+
+}
+
+#stream > div{
+	padding: 10px;
+	border-radius: 3px;
+
+
+	display: inline-block;
+}
+
+#stream div > span{
+	padding: 15px;
+	border-radius: 3px;
+
+}
