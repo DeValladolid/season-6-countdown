@@ -234,3 +234,17 @@ a.button {
 	border-radius: 3px;
 
 }
+
+#stream div > h4{
+  background: url(./icon.png) no-repeat;
+  display: inline-block;
+  font-size: 24px;
+  text-align: center;
+  line-height: 26px;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+  width: 258px;
+  height: 61px;
+  padding-top: 26px;
+  background-position: 0 -635px;
