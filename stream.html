@@ -6,7 +6,7 @@
   <title>Fortnite Countdown Clock</title>
       <link rel="stylesheet" href="css/stream.css">
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
-      <meta name="twitter:card" content="summary">
+      <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="@SrDrabx">
       <meta name="twitter:title" content="Fortnitemares event">
       <meta name="twitter:description" content="Countdown for the Fortnitemares event.">
@@ -24,11 +24,11 @@
 <body>
   <h1>SEASON 7 BEGINS IN...</h1>
   <!-- Display the countdown timer in an element -->
-<p id="demo"></p>
+<p id="demo" style="margin-top: 30px"></p>
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("December 6 2018 08:00:00 GMT+0000").getTime();
+var countDownDate = new Date("December 6 2018 08:00:00 UTC+0000").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -52,7 +52,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "STARTED";
+    document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
 </script>
