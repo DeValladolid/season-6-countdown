@@ -363,3 +363,10 @@ a.button {
   .embed-responsive-1by1::before {
   	padding-top: 100%
   }
+
+ #demo {
+    font-family: burbank-small;
+    color: #fff;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 5px black;
+ }
